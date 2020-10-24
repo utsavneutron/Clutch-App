@@ -1,7 +1,6 @@
-# React Firebase Super Chat
+App for Googls's Social Good project
 
-A simple fullstack chat demo with React and Firebase. 
 
-Watch on full [React Firebase Chat Tutorial](https://youtu.be/zQyrwxMPm88) on YouTube. 
+npm react install
 
-[Live demo](https://fireship-demos.web.app/)
+npm start
