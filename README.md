@@ -1,1 +1,0 @@
-HackTX COVID-19 Social Good Project 
