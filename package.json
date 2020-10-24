@@ -1,6 +1,6 @@
 {
-  "name": "react-chat",
-  "version": "0.1.0",
+  "name": "clutch",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -32,5 +32,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "A simple fullstack chat demo with React and Firebase.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rachit8484/HackTX2020.git"
+  },
+  "keywords": [
+    "clutch"
+  ],
+  "author": "Utsav Shrestha, Rachit Agarwal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rachit8484/HackTX2020/issues"
+  },
+  "homepage": "https://github.com/Rachit8484/HackTX2020#readme"
 }
