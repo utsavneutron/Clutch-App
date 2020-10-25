@@ -1,4 +1,4 @@
-App for Googls's Social Good project
+App for Microsoft's Social Good project
 
 
 npm react install
