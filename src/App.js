@@ -1,10 +1,18 @@
 import React, { useRef, useState } from 'react';
+
+import ReactDOM from "react-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import Header from "./header";
+import Footer from "./footer"
+
+
 import './App.css';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
+
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -25,6 +33,25 @@ firebase.initializeApp({
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
+
+// const routing = (
+//   <Router>
+//     <div>
+//       <Header />
+//       <hr />
+//       <Switch>
+//       return (
+//          <>
+//             <p>Clutch, Inc</p>
+//          </>
+//      )
+//       </Switch>
+//       <Footer />
+//     </div>
+//   </Router>
+// );
+
+// ReactDOM.render(routing, document.getElementById("root"));
 
 
 function App() {
@@ -56,7 +83,7 @@ function SignIn() {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
+      <p>Clutch, Inc</p>
     </>
   )
 
@@ -127,6 +154,7 @@ function ChatMessage(props) {
     </div>
   </>)
 }
+
 
 
 export default App;
