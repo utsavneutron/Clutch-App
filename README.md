@@ -1,6 +1,7 @@
 # Clutch! <br>
 __Essential items ordering for those who are on self quarantine mode as part of our Social good initiative under Microsoft's Azure challenge.__
-
+<br>
+<br>
 ## App for Microsoft's Social Good project
 
 - Inspiration: One of our teammates was in the self-quarantine mode for 2 weeks in April. He had a lot of trouble getting the asian food due to the lack of home delivery service in Indian stores. We got inspiration from them.
