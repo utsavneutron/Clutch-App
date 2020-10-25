@@ -1,5 +1,5 @@
 body {
-  background-color: #282c34;
+  background-color: rgb(194, 191, 191);
 }
 
 .App {
@@ -26,6 +26,14 @@ body {
 }
 
 .App section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgb(219, 215, 215);
+}
+
+.SignIn section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,7 +78,6 @@ form button {
   background-color: rgb(56, 56, 143);
 }
 
-
 input {
   line-height: 1.5;
   width: 100%;
@@ -99,18 +106,16 @@ button:disabled {
   cursor: not-allowed;
 }
 
-
 .sign-in {
   color: #282c34;
-  background: white;
+  background: grey;
+  border-radius: 12px;
   max-width: 400px;
   margin: 0 auto;
 }
 
-
-
-
-ul, li {
+ul,
+li {
   text-align: left;
   list-style: none;
 }
@@ -131,7 +136,6 @@ p {
   align-items: center;
 }
 
-
 .sent {
   flex-direction: row-reverse;
 }
@@ -147,9 +151,13 @@ p {
 }
 
 img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  /* border-radius: 50%; */
   margin: 2px 5px;
-}
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  style={{ alignSelf: 'center' }}
 
+}

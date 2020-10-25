@@ -1,0 +1,7 @@
+{
+  "name": "Clutch",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

@@ -1,12 +1,15 @@
 import React, { useRef, useState } from 'react';
 
-import ReactDOM from "react-dom";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import Header from "./header";
-import Footer from "./footer"
-
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 import './App.css';
+
+import logo from './logo192.png';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -34,39 +37,44 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
-// const routing = (
-//   <Router>
-//     <div>
-//       <Header />
-//       <hr />
-//       <Switch>
-//       return (
-//          <>
-//             <p>Clutch, Inc</p>
-//          </>
-//      )
-//       </Switch>
-//       <Footer />
-//     </div>
-//   </Router>
-// );
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
 
-// ReactDOM.render(routing, document.getElementById("root"));
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+    paddingLeft: 100,
+    alignItems: 'flex-end'
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
 
 
 function App() {
 
   const [user] = useAuthState(auth);
+  const [showChat, setShowChat] = useState(false);
 
   return (
     <div className="App">
       <header>
-        <h1>⚛️🔥💬</h1>
+        <h1>Clutch!</h1>  
         <SignOut />
       </header>
 
       <section>
-        {user ? <ChatRoom /> : <SignIn />}
+        <div styles="flex-direction:column">
+          {user ? <IndexPage /> : <SignIn />}
+        </div>
+        
       </section>
 
     </div>
@@ -82,8 +90,20 @@ function SignIn() {
 
   return (
     <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Clutch, Inc</p>
+      
+        <div className="SignIn">
+          <section>
+            <img src = {logo}
+            alt="Clutch"
+            width="200px"
+            className="center"
+            style={{ alignSelf: 'center' }}
+            />
+            <button variant="primary" className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
+
+            <span style={{color:"white", textAlignVertical: "bottom"}}>Clutch, Inc</span>
+          </section>
+        </div>        
     </>
   )
 
@@ -93,6 +113,99 @@ function SignOut() {
   return auth.currentUser && (
     <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
   )
+}
+
+
+function IndexPage() {
+  const classes = useStyles();
+  const bull = <span className={classes.bullet}>•</span>;
+
+  return (<>
+           <Card className={classes.root}>
+      <CardActions>
+        <Button size="small">Shreyas Sood</Button>
+
+        <Typography className={classes.title} color="textSecondary" gutterBottom >
+          Food from Jester Cafeteria to Kins Dorms
+        </Typography>
+      </CardActions>
+    </Card>
+
+    <Card className={classes.root}>
+      <CardActions>
+        <Button size="small">Tom Smith</Button>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Pasta from Rio Mart to 21 Rio apt.
+        </Typography>
+      </CardActions>
+    </Card>
+
+    <Card className={classes.root}>
+      <CardActions>
+        <Button size="small">Patrick Collison</Button>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Advil form CVS to Quarters Nueces Apt.
+        </Typography>
+      </CardActions>
+    </Card>
+
+    <Card className={classes.root}>
+      <CardActions>
+        <Button size="small">Anant Bharadwaj</Button>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Indian grocery for Riya from Patel Brothers
+        </Typography>
+      </CardActions>
+    </Card>
+
+    <Card className={classes.root}>
+      <CardActions>
+        <Button size="small">Mia Kat</Button>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Wie Wie from Chaina Town for Jing Yuan
+        </Typography>
+      </CardActions>
+    </Card>
+
+    <Card className={classes.root}>
+      <CardActions>
+        <Button size="small">Shreya Kinhekar</Button>
+        
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Word of the Day
+        </Typography>
+      </CardActions>
+    </Card>
+
+    <Card className={classes.root}>
+      <CardActions>
+        <Button size="small">Brandan Hale</Button>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Masks for Imam
+        </Typography>
+      </CardActions>
+    </Card>
+
+    <Card className={classes.root}>
+      <CardActions>
+        <Button size="small">Laura Jaine</Button>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          i20 prints for Mariam
+        </Typography>
+      </CardActions>
+    </Card>
+
+    <Card className={classes.root}>
+      <CardActions>
+        <Button size="small">David Kim</Button>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Detergent for Jammie
+        </Typography>
+      </CardActions>
+    </Card>
+
+    
+  </>);
 }
 
 
