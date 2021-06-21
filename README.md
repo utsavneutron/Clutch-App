@@ -10,6 +10,7 @@ __Essential items ordering for those who are on self quarantine mode as part of 
 
 - How we built it: We used reactJS for the web-app, firebase to power the backend, and firebasio to manage the database. We hosted our site on google cloud and managed the code merging using Github.
 
+## Checkout the Demo: https://devpost.com/software/clutch-014jca
 
 How to run:
 npm react install
